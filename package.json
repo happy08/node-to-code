@@ -1,0 +1,17 @@
+{
+  "name": "node-to-code",
+  "version": "1.0.0",
+  "description": "自动生成CV代码",
+  "author": "陈幸福",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "vscode-debugadapter": "^1.40.0"
+  }
+}
