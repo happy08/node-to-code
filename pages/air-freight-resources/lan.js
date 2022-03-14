@@ -1,0 +1,26 @@
+export default {
+  // 机场管理
+  air-freight-resources_resourceCode: '资源编码',
+    air-freight-resources_resourceType: '资源类型',
+    air-freight-resources_routeArea: '所属大区',
+    air-freight-resources_spaceCode: '固舱编码',
+    air-freight-resources_airRouteCode: '航线编码',
+    air-freight-resources_airRoute: '航线',
+    air-freight-resources_departureAirport: '始发机场',
+    air-freight-resources_destinationAirport: '目的机场',
+    air-freight-resources_serviceProviderName: '服务商',
+    air-freight-resources_airlineCompany: '航司',
+    air-freight-resources_cargoHoldType: '舱位类型',
+    air-freight-resources_estimatedDepartureTime: '预计起飞时间',
+    air-freight-resources_estimatedArrivalTime: '预计到达时间',
+    air-freight-resources_volume: '方数',
+    air-freight-resources_flightNumber: '航班号',
+    air-freight-resources_aircraftType: '机型',
+    air-freight-resources_flightCycle: '航班周期',
+    air-freight-resources_effectiveTime: '生效时间',
+    air-freight-resources_failureTime: '失效时间',
+    air-freight-resources_cargoHoldDate: '舱位日期',
+    air-freight-resources_spaceStatus: '固舱状态',
+    air-freight-resources_resourceStatus: '资源状态',
+    
+}

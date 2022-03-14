@@ -2,83 +2,97 @@
   <el-dialog
     :model-value="visible"
     :close-on-click-modal="false"
-    :title="updateType === 'edit' ? '编辑' : '新增'"
+    :title="updateType === 'edit' ? $t('edit') : $t('add')"
     width="550px"
     top="5vh"
     @close="handleCancel"
   >
     <el-form :model="form" :rules="rules" ref="formRef" size="mini" label-width="120px">
       <el-row :gutter="20">
-       <el-col :span="24">
-    <el-form-item label="港口代码" prop="code">
+       <!-- 港口代码 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_code')" prop="code">
         <el-input v-model="form.code" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="港口名称" prop="portCnName">
+      <!-- 港口名称 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_portCnName')" prop="portCnName">
         <el-input v-model="form.portCnName" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="港口英文名" prop="portEnName">
+      <!-- 港口英文名 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_portEnName')" prop="portEnName">
         <el-input v-model="form.portEnName" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="港口类型" prop="type">
+      <!-- 港口类型 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_type')" prop="type">
         <el-input v-model="form.type" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="所属大区" prop="area">
+      <!-- 所属大区 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_area')" prop="area">
         <el-input v-model="form.area" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="国家/地区" prop="country">
+      <!-- 国家/地区 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_country')" prop="country">
         <el-input v-model="form.country" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="省/州" prop="province">
+      <!-- 省/州 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_province')" prop="province">
         <el-input v-model="form.province" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="城市" prop="city">
+      <!-- 城市 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_city')" prop="city">
         <el-input v-model="form.city" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="口岸" prop="portCode">
+      <!-- 口岸 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_portCode')" prop="portCode">
         <el-input v-model="form.portCode" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="时区" prop="timezone">
+      <!-- 时区 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_timezone')" prop="timezone">
         <el-input v-model="form.timezone" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="班期" prop="workCycle">
+      <!-- 班期 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_workCycle')" prop="workCycle">
         <el-input v-model="form.workCycle" disabled  ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="最大处理能力（箱/包裹）" prop="maxProcessingPower">
+      <!-- 最大处理能力（箱/包裹） -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_maxProcessingPower')" prop="maxProcessingPower">
         <el-input v-model="form.maxProcessingPower"   ></el-input>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="状态" prop="status">
+      <!-- 状态 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_status')" prop="status">
         <el-select v-model="form.status"  filterable class="w-100">
     <el-option :value="1" label="启用"></el-option>
     <el-option :value="2" label="禁用"></el-option>
     </el-select>
       </el-form-item>
       </el-col>
-      <el-col :span="24">
-    <el-form-item label="备注" prop="remark">
+      <!-- 备注 -->
+    <el-col :span="24">
+    <el-form-item :label="$t('operationNetwork_remark')" prop="remark">
         <el-input v-model="form.remark"  type="textarea"  ></el-input>
       </el-form-item>
       </el-col>
@@ -86,8 +100,10 @@
       </el-row>
     </el-form>
     <template #footer>
-      <el-button @click="handleCancel"> 取消 </el-button>
-      <el-button @click="handleConfirm" type="linear" :loading="confirmLoading"> 确定 </el-button>
+      <!-- 取消 -->
+      <el-button @click="handleCancel"> {{ $t('cancel') }} </el-button>
+      <!-- 确定 -->
+      <el-button @click="handleConfirm" type="linear" :loading="confirmLoading"> {{ $t('confirm') }} </el-button>
     </template>
   </el-dialog>
 </template>
@@ -114,7 +130,6 @@ export default defineComponent({
       () => props.row,
       nVal => {
         form.value = proxy.$tools.deepClone(nVal)
-        console.log('form.value', form.value)
       }
     )
     const rules = {

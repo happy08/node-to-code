@@ -1,9 +1,30 @@
-
+<!-- 港口信息管理 -->
 <template>
   <ZtSearchForm @search="onSearch">
     <el-form label-position="top">
       <el-row :gutter="20">
-        
+        <!-- 港口代码 -->
+      <el-col :span="5">
+      <el-form-item :label="$t('harbor_code')">
+        <el-input v-model="searchForm.code" clearable :placeholder="$t('please_enter')"></el-input>
+      </el-form-item>
+    </el-col>
+    <!-- 港口名称 -->
+      <el-col :span="5">
+      <el-form-item :label="$t('harbor_portCnName')">
+        <el-input v-model="searchForm.portCnName" clearable :placeholder="$t('please_enter')"></el-input>
+      </el-form-item>
+    </el-col>
+    <!-- 状态 -->
+      <el-col :span="5">
+      <el-form-item :label="$t('harbor_status')">
+        <el-select v-model="searchForm.undefined" filterable class="w-100">
+          <el-option :key="1" :value="1" label="启用"></el-option>
+          <el-option :key="2" :value="2" label="禁用"></el-option>
+        </el-select>
+      </el-form-item>
+    </el-col>
+    
       </el-row>
     </el-form>
   </ZtSearchForm>
@@ -14,35 +35,36 @@
     </template>
     <zt-table v-loading="tableLoading" :data="tableData" stripe>
       <!-- 港口代码 -->
-      <zt-table-column prop="code" :label="$t('home_code')" ></zt-table-column>
+      <zt-table-column prop="code" :label="$t('harbor_code')" ></zt-table-column>
     <!-- 港口名称 -->
-      <zt-table-column prop="portCnName" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portCnName" :label="$t('harbor_portCnName')" ></zt-table-column>
     <!-- 港口英文名 -->
-      <zt-table-column prop="portEnName" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portEnName" :label="$t('harbor_portEnName')" ></zt-table-column>
     <!-- 港口类型 -->
-      <zt-table-column prop="type" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="type" :label="$t('harbor_type')" ></zt-table-column>
     <!-- 所属大区 -->
-      <zt-table-column prop="area" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="area" :label="$t('harbor_area')" ></zt-table-column>
     <!-- 国家/地区 -->
-      <zt-table-column prop="country" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="country" :label="$t('harbor_country')" ></zt-table-column>
     <!-- 省/州 -->
-      <zt-table-column prop="province" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="province" :label="$t('harbor_province')" ></zt-table-column>
     <!-- 城市 -->
-      <zt-table-column prop="city" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="city" :label="$t('harbor_city')" ></zt-table-column>
     <!-- 口岸 -->
-      <zt-table-column prop="portCode" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portCode" :label="$t('harbor_portCode')" ></zt-table-column>
     <!-- 时区 -->
-      <zt-table-column prop="timezone" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="timezone" :label="$t('harbor_timezone')" ></zt-table-column>
     <!-- 班期 -->
-      <zt-table-column prop="workCycle" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="workCycle" :label="$t('harbor_workCycle')" ></zt-table-column>
     <!-- 最大处理能力（箱/包裹） -->
-      <zt-table-column prop="maxProcessingPower" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="maxProcessingPower" :label="$t('harbor_maxProcessingPower')" ></zt-table-column>
     <!-- 状态 -->
-      <zt-table-column prop="status" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="status" :label="$t('harbor_status')" ></zt-table-column>
     <!-- 备注 -->
-      <zt-table-column prop="remark" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="remark" :label="$t('harbor_remark')" ></zt-table-column>
     
-      <zt-table-column :label="$t{'operation'}" fixed="right" width="80">
+      <!-- 操作 -->
+      <zt-table-column :label="$t('operation')" fixed="right" width="80">
         <template #default="scope">
           <!-- 编辑 -->
           <el-button @click="handleAddEdit(scope.row)" type="text">
@@ -69,16 +91,16 @@
 
 <script>
 import { defineComponent, ref, getCurrentInstance } from 'vue'
-import handleCommon from '@/utils/handle-common'
+import { tableCommon } from '@/utils/handle-common'
 import { getEnumeration } from '@/services/transport'
 import { siteOperatingOutlets } from '@/services/area'
 
 
-import AddEdit from "./component/addEdit";
+import AddEdit from "./components/addEdit";
 
 
 export default defineComponent({
-  name: "home",
+  name: "harbor",
   components: { 
     AddEdit 
   },
@@ -89,7 +111,7 @@ export default defineComponent({
     const searchForm = ref({})
 
     // 初始化搜索条件
-    const FORM_KEY = 'basicdataRCMS'
+    const FORM_KEY = 'harborAPP'
 
     // 功能
     const {
@@ -105,7 +127,7 @@ export default defineComponent({
       handleReset,
       handleCurrentChange,
       handlePageSizeChange
-    } = handleCommon({
+    } = tableCommon({
       getDataList,
       addEdit,
       searchForm,
@@ -143,7 +165,7 @@ export default defineComponent({
     //   })
 
     
-    //新增编辑
+    // 新增编辑
     function addEdit(row = {}) {
       editRow.value = row
       addEditVisible.value = true

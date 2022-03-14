@@ -3,7 +3,17 @@
   <ZtSearchForm @search="onSearch">
     <el-form label-position="top">
       <el-row :gutter="20">
-        
+        <el-col :span="5">
+      <el-form-item :label="$t('operationNetwork_code')">
+        <el-input v-model="searchForm.code" clearable :placeholder="$t('please_enter')"></el-input>
+      </el-form-item>
+    </el-col>
+    <el-col :span="5">
+      <el-form-item :label="$t('operationNetwork_portCnName')">
+        <el-input v-model="searchForm.portCnName" clearable :placeholder="$t('please_enter')"></el-input>
+      </el-form-item>
+    </el-col>
+    
       </el-row>
     </el-form>
   </ZtSearchForm>
@@ -14,35 +24,36 @@
     </template>
     <zt-table v-loading="tableLoading" :data="tableData" stripe>
       <!-- 港口代码 -->
-      <zt-table-column prop="code" :label="$t('home_code')" ></zt-table-column>
+      <zt-table-column prop="code" :label="$t('operationNetwork_code')" ></zt-table-column>
     <!-- 港口名称 -->
-      <zt-table-column prop="portCnName" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portCnName" :label="$t('operationNetwork_portCnName')" ></zt-table-column>
     <!-- 港口英文名 -->
-      <zt-table-column prop="portEnName" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portEnName" :label="$t('operationNetwork_portEnName')" ></zt-table-column>
     <!-- 港口类型 -->
-      <zt-table-column prop="type" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="type" :label="$t('operationNetwork_type')" ></zt-table-column>
     <!-- 所属大区 -->
-      <zt-table-column prop="area" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="area" :label="$t('operationNetwork_area')" ></zt-table-column>
     <!-- 国家/地区 -->
-      <zt-table-column prop="country" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="country" :label="$t('operationNetwork_country')" ></zt-table-column>
     <!-- 省/州 -->
-      <zt-table-column prop="province" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="province" :label="$t('operationNetwork_province')" ></zt-table-column>
     <!-- 城市 -->
-      <zt-table-column prop="city" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="city" :label="$t('operationNetwork_city')" ></zt-table-column>
     <!-- 口岸 -->
-      <zt-table-column prop="portCode" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="portCode" :label="$t('operationNetwork_portCode')" ></zt-table-column>
     <!-- 时区 -->
-      <zt-table-column prop="timezone" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="timezone" :label="$t('operationNetwork_timezone')" ></zt-table-column>
     <!-- 班期 -->
-      <zt-table-column prop="workCycle" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="workCycle" :label="$t('operationNetwork_workCycle')" ></zt-table-column>
     <!-- 最大处理能力（箱/包裹） -->
-      <zt-table-column prop="maxProcessingPower" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="maxProcessingPower" :label="$t('operationNetwork_maxProcessingPower')" ></zt-table-column>
     <!-- 状态 -->
-      <zt-table-column prop="status" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="status" :label="$t('operationNetwork_status')" ></zt-table-column>
     <!-- 备注 -->
-      <zt-table-column prop="remark" :label="$t('home_Name')" ></zt-table-column>
+      <zt-table-column prop="remark" :label="$t('operationNetwork_remark')" ></zt-table-column>
     
-      <zt-table-column :label="$t{'operation'}" fixed="right" width="80">
+      <!-- 操作 -->
+      <zt-table-column :label="$t('operation')" fixed="right" width="80">
         <template #default="scope">
           <!-- 编辑 -->
           <el-button @click="handleAddEdit(scope.row)" type="text">
@@ -74,11 +85,11 @@ import { getEnumeration } from '@/services/transport'
 import { siteOperatingOutlets } from '@/services/area'
 
 
-import AddEdit from "./component/addEdit";
+import AddEdit from "./components/addEdit";
 
 
 export default defineComponent({
-  name: "home",
+  name: "operationNetwork",
   components: { 
     AddEdit 
   },
@@ -143,7 +154,7 @@ export default defineComponent({
     //   })
 
     
-    //新增编辑
+    // 新增编辑
     function addEdit(row = {}) {
       editRow.value = row
       addEditVisible.value = true
