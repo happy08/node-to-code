@@ -1,5 +1,6 @@
 exports.data = [
   {
+    project: "rcms", //项目
     template: "table", //模板标识（写死）
     templateName: "操作网点管理", //目录名称
     folder: "operating-outlet", //目录名称
@@ -17,7 +18,7 @@ exports.data = [
       //   isSearch: false,
       //   inputType:"text", // text select
       //   span: 24, // 行占比
-      //   rules:`[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+      //   rules:`[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
       //   maxlength:0 // 是否限制长度
       // },
       {
@@ -27,7 +28,7 @@ exports.data = [
         isSearch: true,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 编辑时行占比
       },
@@ -38,7 +39,7 @@ exports.data = [
         isSearch: true,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -49,7 +50,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -60,7 +61,7 @@ exports.data = [
         isSearch: true,
         inputType: "select", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_select'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_select'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -71,7 +72,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -82,7 +83,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -93,7 +94,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -104,7 +105,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -115,7 +116,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -126,7 +127,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -137,7 +138,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -148,7 +149,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -159,7 +160,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -170,7 +171,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -181,7 +182,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -192,7 +193,7 @@ exports.data = [
         isSearch: false,
         inputType: "select", // text select
         disabled: true,
-        rules: `[{ required: true, message: proxy.$t('please_select'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_select'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -203,7 +204,7 @@ exports.data = [
         isSearch: false,
         inputType: "text", // text select
         disabled: false,
-        rules: `[{ required: true, message: proxy.$t('please_enter'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_enter'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },
@@ -214,7 +215,7 @@ exports.data = [
         isSearch: true,
         inputType: "select", // text select
         disabled: false,
-        rules: `[{ required: true, message: proxy.$t('please_select'), trigger: 'blur' }]`,
+        rules: `[{ required: true, message: $t('rcms_please_select'), trigger: 'blur' }]`,
         maxlength: 0, // 是否限制输入长度
         span: 24, // 行占比
       },

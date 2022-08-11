@@ -3,8 +3,10 @@ const templateTableColumn = (props) => {
   let str = ''
   const column = props.templateTableColumn
   for (key in column) {
-  str += `${props.folder}_${column[key].prop}: '${column[key].labelCn}',
+    if(!column[key].labelLang){
+  str += `${props.project}_${column[key].$t || column[key].prop}: '${column[key].labelCn}',
     `
+  }
   }
   return str
 }

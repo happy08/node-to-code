@@ -2,7 +2,7 @@ exports.data = [
   {
     template: "table", //模板标识（写死）
     templateName: "空运资源管理", //目录名称
-    folder: "air-freight-resources", //目录名称
+    folder: "air-resources", //目录名称
     file: "index.vue", //文件名称
     isSearchForm: true, //是否需要搜索表单
     isAddBtn: false, //是否新增按钮
